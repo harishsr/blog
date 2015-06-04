@@ -1,4 +1,4 @@
-class BlogsController < ApplicationController
+class ArticlesController < ApplicationController
 
   # ISNECUD
 

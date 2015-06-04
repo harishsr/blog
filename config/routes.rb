@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :blogs
+  resources :articles
 
-  root 'blogs#index'
+  root 'articles#index'
 
 
   # Example of regular route:
