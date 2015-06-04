@@ -20,7 +20,7 @@ gem 'validates_email_format_of',        '1.6.2'
 group :development, :test do
   gem 'byebug',                         '4.0.5'
   gem 'web-console',                    '2.0'
-  gem 'spring',                         '1.3.4'
+  gem 'spring',                         '1.3.6'
   gem 'sqlite3',                        '1.3.10'
   gem 'faker',                          '1.4.3'
   gem 'rspec-rails',                    '3.2.2'
