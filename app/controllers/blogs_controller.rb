@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   # ISNECUD
-  
+
   def index
   end
 
@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @blog = String.new
   end
 
   def edit

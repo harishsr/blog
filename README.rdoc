@@ -8,9 +8,26 @@
 * Deployed using Heroku
 
 =PLAN:
-* Create a BLOG where registered bloggers can create posts with pictures
-* Any reader can post COMMENTS on each post
+* Create a BLOG where registered bloggers can create entries with pictures
+* Any reader can post COMMENTS on each entry
   * Comments can be deleted by either admins or bloggers
 * Allow BLOGGERS to register for an account and use the account to post blog entries
   * Allow bloggers to potentially have an ADMIN role
     * Admins can delete comments & other users
+
+----
+
+=MODELS:
+* Blog
+  * Title:string, Entry:text
+* Comment
+  * opinion, blog:references
+* Blogger
+  * Name:string, email:string, password:string, admin:boolean
+
+----
+
+=ORDER:
+* Blogs controller, views, model
+* Blogger: devise system
+* Comments controller, views integration, model
