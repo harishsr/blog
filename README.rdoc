@@ -8,10 +8,9 @@
 * Deployed using Heroku
 
 =PLAN:
-* Create a Blog where registered bloggers can create posts with pictures
-* Any reader can post comments on each post
-
-* Comments can be deleted by either admins or bloggers
-* Allow bloggers to register for an account and use the account to post blog entries
-* Allow bloggers to potentially have an admin role
-  * Admins can delete comments & other users
+* Create a BLOG where registered bloggers can create posts with pictures
+* Any reader can post COMMENTS on each post
+  * Comments can be deleted by either admins or bloggers
+* Allow BLOGGERS to register for an account and use the account to post blog entries
+  * Allow bloggers to potentially have an ADMIN role
+    * Admins can delete comments & other users
