@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
 
-  # ISNECUD
-
   def index
-    @article = Article.all
+    @articles = Article.all.order("created_at DESC")
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -14,6 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
   def create
@@ -22,14 +22,23 @@ class ArticlesController < ApplicationController
       flash[:success] = "Your entry was created."
       render 'show'
     else
-      redirect_to 'new'
+      redirect_to new_article_path
     end
   end
 
   def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(article_params)
+      flash[:success] = "Your entry was updated."
+      render 'show'
+    else
+      redirect_to edit_article_path(@article)
+    end
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    @article.destroy    
   end
 
   private

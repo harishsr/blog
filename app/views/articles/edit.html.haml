@@ -1,0 +1,14 @@
+%h2 Update an Entry:
+= form_for @article, method: :patch do |f|
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+
+  %p
+    = f.label :entry, "Create your entry"
+    %br
+    = f.text_area :entry, rows: 20
+
+  %p
+    = f.submit

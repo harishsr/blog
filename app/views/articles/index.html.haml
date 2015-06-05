@@ -1,2 +1,6 @@
-%h1
- This is the Blog's index page
+%h1 This is the Blog's index page
+
+- @articles.each do |article|
+  %h2= article.title
+  %p= article.entry
+  %hr

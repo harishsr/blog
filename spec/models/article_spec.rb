@@ -5,6 +5,7 @@ RSpec.describe Article, type: :model do
   before { @article = Article.create!(title: "Just another day", entry: "Another day another dollar earned.  200 times.  ")}
   
   context "validations" do 
+    
     it "should validate a correct article" do 
       expect(@article).to be_valid
     end
