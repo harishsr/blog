@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
 
-  before { @article = Article.create!(title: "Just another day", entry: "Another day another dollar earned.  200 times.  ")}
+  before { @article = Article.create!(title: "Just another day", 
+                                      entry: "Another day another test made to pass.  ")}
   
   context "validations" do 
-    
+
     it "should validate a correct article" do 
       expect(@article).to be_valid
     end
@@ -38,6 +39,24 @@ RSpec.describe Article, type: :model do
       # Over 5000 chars long
       @article.entry = "a"*5001
       expect(@article).to be_invalid
+    end
+  end
+
+  context "CRUD" do 
+    it "should create successfully" do 
+      expect(Article.last).to eq(@article)
+    end
+
+    it "should destroy articles successfully" do 
+      @article.destroy
+      expect(Article.last).to_not eq(@article)
+    end
+
+    it "should update successfully" do
+      new_title = "Yes, this is another day" 
+      @article.title = new_title
+      @article.save
+      expect(Article.last.title).to eq(new_title)
     end
   end
 end
