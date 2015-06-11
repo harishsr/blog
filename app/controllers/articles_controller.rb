@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
     @article = Article.create(article_params)
     if @article.save
       flash[:success] = "Your entry was created."
-      render 'show'
+      redirect_to @article
     else
       redirect_to new_article_path
     end
@@ -30,9 +30,9 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
       flash[:success] = "Your entry was updated."
-      render 'show'
+      redirect_to @article
     else
-      redirect_to edit_article_path(@article)
+      render 'edit'
     end
   end
 
