@@ -20,7 +20,7 @@
 
 // VARIABLES
   $background: white;
-  $secondary-color: blue;
+  $form-bg: lighten($brand-primary, 45%);
   $link-hover: tomato;
 
 // MAIN
@@ -44,8 +44,8 @@
       font-size: 3em;
       padding-bottom: 20px;
       text-transform: uppercase;
-      text-shadow: 2px 0 8px black;
-      color: $background;
+      // text-shadow: 2px 0 5px black;
+      color: $brand-primary;
     }
 
     h3 {
@@ -76,5 +76,36 @@
     &:hover {
       text-decoration: none;
       color: $link-hover;
+    }
+  }
+
+// FORMS
+
+  label {
+    text-transform: uppercase;
+    padding-top: 10px;
+    margin-left: -10px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    background: $form-bg;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.3em;
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: $brand-primary;
+    width: 100%;
+    font-size: 2em;
+    color: white;
+
+    &:hover {
+      background: $link-hover;
     }
   }
