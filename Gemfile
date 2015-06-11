@@ -16,6 +16,7 @@ gem 'devise',                           '3.4.1'
 gem 'will_paginate',                    '3.0.7'
 gem 'bootstrap-will_paginate',          '0.0.10'
 gem 'validates_email_format_of',        '1.6.2'
+gem 'faker',                            '1.4.3'
 
 
 group :development, :test do
@@ -23,7 +24,6 @@ group :development, :test do
   gem 'web-console',                    '2.0'
   gem 'spring',                         '1.3.6'
   gem 'sqlite3',                        '1.3.10'
-  gem 'faker',                          '1.4.3'
   gem 'rspec-rails',                    '3.2.2'
 end
 
