@@ -71,11 +71,13 @@
     font-family: courier;
     font-size: 0.8em;
   }
+
 // SHOW & INDEX
 
   .time {
     font-weight: none;
     font-family: courier;
+    color: lightgray;
   }
   a {
     color: black;
@@ -94,6 +96,8 @@
   }
   
   input[type="text"],
+  input[type="email"],
+  input[type="password"],
   textarea {
     width: 100%;
     background: $form-bg;
@@ -114,4 +118,21 @@
     &:hover {
       background: $link-hover;
     }
+  }
+
+// DEVISE
+
+  .alert,
+  .notice {
+    width: 100%;
+    padding: 15px 30px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .alert {
+    background: tomato;
+    color: white;
+  }
+  .notice {
+    background: lightgreen;
   }

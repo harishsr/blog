@@ -1,6 +1,11 @@
 .navbar
   %h1 Blogville
   %h3= link_to "All Articles", root_url
-  %h3= link_to "New Article", new_article_url
+  - if current_user
+    %h3= link_to "New Article", new_article_url
+    %h3= link_to "Log Out", destroy_user_session_path, method: :delete
+  - else
+    %h3=link_to "Log in", new_user_session_path
+    %h3=link_to "Register", new_user_registration_path
   %br
   %h5= link_to "harishsr", "http://www.harishsr.com"

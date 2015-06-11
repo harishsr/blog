@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     @articles = Article.all.order("created_at DESC").paginate(page: params[:page], per_page: 2)
@@ -9,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def edit
@@ -17,7 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       flash[:success] = "Your entry was created."
       redirect_to @article

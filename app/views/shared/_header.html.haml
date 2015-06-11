@@ -1,5 +1,4 @@
-- if alert || notice
-  %p.notice
-    = notice if notice
-  %p.alert
-    = alert if alert
+- if notice
+  %p.notice= notice
+- elsif alert
+  %p.alert= alert
