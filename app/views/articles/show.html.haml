@@ -1,2 +1,8 @@
 %h1= @article.title
-%p= @article.entry
+%p= simple_format(@article.entry)
+%br
+%span{class: "glyphicon glyphicon-arrow-left"}
+= link_to 'Back to blog', root_url
+|
+= link_to('Edit Entry', edit_article_path(@article))
+%span{class: "glyphicon glyphicon-arrow-right"}

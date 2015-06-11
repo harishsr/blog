@@ -1,6 +1,9 @@
-%h1 This is the Blog's index page
+
 
 - @articles.each do |article|
-  %h2= article.title
-  %p= article.entry
+  %h3= link_to article.title, article
+  .time= article.created_at.strftime("Created on %m.%d.%Y")
+  %p= simple_format(article.entry)
   %hr
+
+= will_paginate @articles

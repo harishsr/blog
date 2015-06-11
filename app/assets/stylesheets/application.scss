@@ -21,6 +21,7 @@
 // VARIABLES
   $background: white;
   $secondary-color: blue;
+  $link-hover: tomato;
 
 // MAIN
   body {
@@ -54,9 +55,26 @@
 
     a {
       color: default;
+      border-left: 3px solid $background;
+      padding-left: 7px;
       &:hover {
-        color: tomato;
+        color: $link-hover;
         text-decoration: none;
+        border-left: 3px solid;
       }
+    }
+  }
+
+// SHOW & INDEX
+
+  .time {
+    font-weight: none;
+    font-family: courier;
+  }
+  a {
+    color: black;
+    &:hover {
+      text-decoration: none;
+      color: $link-hover;
     }
   }

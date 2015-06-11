@@ -1,6 +1,8 @@
 .navbar
-  %h1 Blogiverse
-  %h3= link_to "View All", root_url
+  %h1 Blogzilla
+  %h3= link_to "All Articles", root_url
   %h3= link_to "New Article", new_article_url
   %br
-  %h5= link_to "...back to harishsr", "http://www.harishsr.com"
+  %h5
+    %span{class: "glyphicon glyphicon-arrow-left"}
+    = link_to "harishsr", "http://www.harishsr.com"
