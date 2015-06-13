@@ -34,6 +34,15 @@
     font-size: 1em;
     padding-left: 25px;
   }
+  a {
+    color: black;
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      color: $link-hover;
+    }
+  }
 
 // NAVBAR
   .navbar {
@@ -79,13 +88,7 @@
     font-family: courier;
     color: lightgray;
   }
-  a {
-    color: black;
-    &:hover {
-      text-decoration: none;
-      color: $link-hover;
-    }
-  }
+
 
 // FORMS
 

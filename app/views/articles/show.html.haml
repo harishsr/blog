@@ -6,6 +6,8 @@
 %span{class: "glyphicon glyphicon-arrow-left"}
 = link_to 'Back to blog', root_url
 - if @article.user == current_user
-  |
-  = link_to('Edit Entry', edit_article_path(@article))
+  &nbsp; | &nbsp;
+  = link_to('Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" })
+  &nbsp; | &nbsp;
+  = link_to('Edit', edit_article_path(@article))
   %span{class: "glyphicon glyphicon-arrow-right"}

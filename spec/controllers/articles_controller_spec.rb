@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
 
+  let!(:user) { User.create!(email: "email@example.com", password: "password1") }
   let!(:article) { Article.create!(title: "Just another day", 
-                                      entry: "Another day another test made to pass.  ")}
+                                    entry: "Another day another test made to pass.  ",
+                                    user_id: 1)}
 
   context "Routing" do 
     it "should get index" do 
@@ -16,6 +18,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     it "should get new" do 
+      sign_in(user)
       get :new
       expect(response).to be_success
       expect(:get => "articles/new").to route_to(
@@ -25,6 +28,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     it "should get edit" do 
+      sign_in(user)
       get :edit, id: article.id
       expect(response).to be_success
       expect(:get => "articles/1/edit").to route_to(
@@ -67,11 +71,13 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     it "should render new" do 
+      sign_in(user)
       get :new
       expect(response).to render_template('new')
     end
 
     it "should render edit" do 
+      sign_in(user)
       get :edit, id: article.id
       expect(response).to render_template('edit')
     end
