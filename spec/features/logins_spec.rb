@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Logins", type: :feature do
 
-  scenario "valid registration & login" do 
-    email = "example@example.com"
+  it "valid registration & login" do 
+    email = "examples@example.com"
     password = "foobarfoobar"
 
     visit '/'
@@ -26,7 +26,7 @@ RSpec.feature "Logins", type: :feature do
     expect(page).to have_content "Welcome back!  You've signed in successfully."
   end
 
-  scenario "invalid registration" do 
+  it "invalid registration" do 
     visit '/'
     click_link 'Register'
     fill_in 'Email', with: 'invalid@'

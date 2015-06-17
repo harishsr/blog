@@ -1,8 +1,8 @@
 module ApplicationHelper
 
-  def sign_up
-    email = "example@example.com"
-    password = "foobarfoobar"
+  ## Feature specs
+
+  def sign_up(email: "example@example.com", password: "foobarfoobar")
     click_link 'Register'
     fill_in 'Email', with: email
     fill_in 'Password', with: password
@@ -10,12 +10,23 @@ module ApplicationHelper
     click_button 'Sign up'
   end
 
-  # def sign_in
-    
-  #   click_link "Log in"
-  #   fill_in 'Email', with: email
-  #   fill_in 'Password', with: password
-  #   check 'Remember me'
-  #   click_button "Log in"
-  # end
+  def log_in
+    click_link "Log in"
+    fill_in 'Email', with: email
+    fill_in 'Password', with: password
+    check 'Remember me'
+    click_button "Log in"
+  end
+
+  def log_out
+    click_link "Log Out"
+  end
+
+  def create_new_article(title: "One of many tales from a grand adventurer", 
+                        entry: "Travelling to the center of the earth I saw wild crea...")
+    click_link 'New Article'
+    fill_in "Title", with: title
+    fill_in "Create your entry", with: entry
+    click_button "Create Article"
+  end
 end
