@@ -1,3 +1,6 @@
+.row
+  = render 'shared/errors'
+
 %h2 Make an Update:
 = form_for @article, method: :patch do |f|
   %p

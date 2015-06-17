@@ -1,3 +1,6 @@
+.row
+  = render 'shared/errors'
+
 %h1= @article.title
 .time= @article.created_at
 .time= @article.user.email

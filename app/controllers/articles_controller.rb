@@ -24,17 +24,17 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      flash[:success] = "Your entry was created."
+      flash[:notice] = "Your entry was created."
       redirect_to @article
     else
-      redirect_to new_article_path
+      render 'new'
     end
   end
 
   def update
     @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
-      flash[:success] = "Your entry was updated."
+      flash[:notice] = "Your entry was updated."
       redirect_to @article
     else
       render 'edit'
@@ -44,6 +44,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy 
+    flash[:notice] = "Your entry was deleted."
     redirect_to root_url
   end
 

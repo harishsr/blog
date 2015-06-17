@@ -95,7 +95,6 @@
   label {
     text-transform: uppercase;
     padding-top: 10px;
-    margin-left: -10px;
   }
   
   input[type="text"],
@@ -114,6 +113,7 @@
     border: 1px solid black;
     border-radius: 5px;
     background: $brand-primary;
+    margin-top: 20px;
     width: 100%;
     font-size: 2em;
     color: white;

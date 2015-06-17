@@ -1,0 +1,10 @@
+- if @article.errors.any?
+  .alert
+    %p 
+      There are 
+      = pluralize @article.errors.count, "error"
+      on this page.
+    %ul
+      - @article.errors.full_messages.each do |msg|
+        %li
+          =msg
