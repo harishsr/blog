@@ -59,6 +59,13 @@ RSpec.feature "Articles", type: :feature do
       expect(page).to have_content "Back to blog"
       expect(page).to_not have_link "Edit"
       expect(page).to_not have_link "Delete"
+
+      create_new_article(title: @new_title)
+
+      click_link "Your Articles"
+      expect(page).to_not have_content @title
+      expect(page).to have_content @new_title
+
     end
   end
 end

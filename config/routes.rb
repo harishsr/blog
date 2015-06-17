@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :articles
 
   root 'articles#index'
-
+  get 'user_index' => 'articles#user_index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

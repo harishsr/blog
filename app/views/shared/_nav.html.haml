@@ -2,7 +2,7 @@
   %h1 Blogville
   %h3= link_to "All Articles", root_url
   - if current_user
-    %h3= link_to "Your Articles", "#"
+    %h3= link_to "Your Articles", user_index_url
     %h3= link_to "New Article", new_article_url
     %h3= link_to "Log Out", destroy_user_session_path, method: :delete
   - else
