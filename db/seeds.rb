@@ -16,3 +16,9 @@ Article.create!(title: "This is the first entry",
                   entry: Faker::Lorem.sentences(50),
                   user_id: rand(1..5))
 end
+
+60.times do 
+  Comment.create!(name: Faker::Name.name,
+                  body: Faker::Lorem.sentences(6),
+                  article_id: rand(16..31))
+end
