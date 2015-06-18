@@ -29,4 +29,10 @@ module ApplicationHelper
     fill_in "Create your entry", with: entry
     click_button "Create Article"
   end
+
+  def create_new_comment(name: "George Bluth", body: "There's always money in the banana stand.")
+    fill_in "Name", with: name
+    fill_in "Response", with: body
+    click_button "Create Comment"
+  end
 end

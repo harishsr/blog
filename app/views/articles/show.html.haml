@@ -20,11 +20,12 @@
   = form_for([@article, @article.comments.build]) do |f|
     %p
       =f.label :name, "Name"
-      =f.text_field :name
+      =f.text_field :name, placeholder: "required... "
     %p
       =f.label :body, "Response"
-      =f.text_area :body, rows: 3
+      =f.text_area :body, rows: 3, placeholder: "required..."
     %p
       =f.submit
 
-= render @article.comments if @article.comments.any?
+- if @article.comments.count > 0
+  = render @article.comments.order("created_at DESC") 

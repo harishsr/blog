@@ -1,7 +1,8 @@
-.comment
-  %p
-    %span.name
-      =comment.name
-    said:
-  %p.body
-    =comment.body
+- if comment
+  .comment
+    %p
+      %span.name
+        =comment.name
+      said:
+    %p.body
+      =comment.body
