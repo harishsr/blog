@@ -16,4 +16,6 @@
   %p
     = f.submit
   %p.picture
-    = f.file_field :picture
+    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
+
+%script{type: "text/javascript", src: "images.js"}
