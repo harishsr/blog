@@ -2,7 +2,7 @@
   = render 'shared/errors', object: @article
 
 %h2 Create an Entry:
-= form_for @article do |f|
+= form_for @article, html: { multipart: true } do |f|
   %p
     = f.label :title
     %br
@@ -15,3 +15,5 @@
 
   %p
     = f.submit
+  %p.picture
+    = f.file_field :picture

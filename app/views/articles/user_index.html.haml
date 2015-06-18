@@ -4,6 +4,7 @@
   .time
     By 
     = article.user.email
+  .image= image_tag article.picture.url if article.picture?
   %p= simple_format(article.entry)
   %hr
 
