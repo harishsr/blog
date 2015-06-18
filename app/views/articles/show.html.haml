@@ -14,3 +14,17 @@
   &nbsp; | &nbsp;
   = link_to('Edit', edit_article_path(@article))
   %span{class: "glyphicon glyphicon-arrow-right"}
+
+.row
+  .h3 Comments:
+  = form_for([@article, @article.comments.build]) do |f|
+    %p
+      =f.label :name, "Name"
+      =f.text_field :name
+    %p
+      =f.label :body, "Response"
+      =f.text_area :body, rows: 3
+    %p
+      =f.submit
+
+= render @article.comments if @article.comments.any?
