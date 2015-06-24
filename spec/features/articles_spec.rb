@@ -30,6 +30,7 @@ RSpec.feature "Articles", type: :feature do
       expect(page).to have_content @entry
       expect(page).to have_link "Edit"
       expect(page).to have_link "Delete"
+      expect(page).to_not have_css(".image img")
 
       click_link "All Articles"
       expect(page).to have_content @title
@@ -66,6 +67,23 @@ RSpec.feature "Articles", type: :feature do
       expect(page).to_not have_content @title
       expect(page).to have_content @new_title
 
+    end
+
+    it "correctly uploads images" do 
+      sign_up
+      click_link "New Article"
+      fill_in "Title", with: @title
+      fill_in "Create your entry", with: @entry
+      attach_file "article[picture]", "#{::Rails.root}/spec/assets/test_image.png"
+      click_button "Create Article"
+
+      # On the show page
+      expect(page).to have_content @title
+      expect(page).to have_css(".image img")
+
+      # On the index page
+      visit '/'
+      expect(page).to have_css(".image img")
     end
   end
 end
